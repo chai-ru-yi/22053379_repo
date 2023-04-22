@@ -1,1 +1,95 @@
+pipeline {
 
+    agent{
+        node{
+            label 'master'
+        }
+    }
+       
+   
+   
+
+    tools { 
+    maven 'maven3' 
+    }
+
+    options {
+        buildDiscarder logRotator( 
+                    daysToKeepStr: '15', 
+                    numToKeepStr: '10'
+            )
+    }
+
+    environment {
+        APP_NAME = "STUDENT_APP"
+        APP_ENV  = "DEV"
+    }
+
+    stages {
+           
+        
+        stage('Stage 1_22053379') {
+            steps {
+                sh "echo S1_22053379: Environment Preparation Completed"
+            }
+        }
+        
+        stage('Stage 2_22053379'){
+            steps {
+            sh 'docker rm -f S2_22053379_Server'
+            sh 'docker run -d -it -p 42000:80 --name=S2_22053379_Server 22053379_webimage /bin/bash'
+            echo "S2_22053379: Web Server Creation Completed"
+            
+            }
+        }
+        
+        stage('3 and 4'){
+        parallel{
+        
+            stage('Stage 3_22053379'){
+                steps {
+                    sh "echo S3_22053379: API Completed"
+                }
+            }
+        
+            stage('Stage 4_22053379'){
+                steps {
+                    sh "echo S4_22053379: DAST Security Test Completed"
+                }
+            }
+  
+      }
+      }
+      
+      
+      
+       stage('Stage 5_22053379'){
+       steps{
+       script{
+                
+         input('Do you want to release the work?')
+     
+        }
+        }
+        }
+      
+      
+      stage('Stage 6_22053379'){
+      steps{
+      script{
+        def proceed = true
+            if(proceed){
+                echo "Work Released - 22053379"
+            }else{
+                currentBuild.result = 'FAILURE'
+            }
+      
+      }
+      }
+      }
+      
+      
+   
+
+    }   
+} 

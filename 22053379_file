@@ -56,21 +56,13 @@ pipeline {
       
         stage('22053379 STG4'){
        steps{
-       script{
-                
-         
-     
-        }
+        echo "S2_22053379: Web Server Creation Completed"
         }
         }
         
          stage('22053379 STG5'){
        steps{
-       script{
-                
-         input('Do you want to release the work?')
-     
-        }
+       echo "S2_22053379: Web Server Creation Completed"
         }
         }
         
@@ -90,9 +82,7 @@ pipeline {
       
       stage('Stage 6_22053379'){
       steps{
-      script{
-        
-      }
+      echo "S2_22053379: Web Server Creation Completed"
       }
       }
       

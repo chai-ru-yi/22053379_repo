@@ -30,14 +30,14 @@ pipeline {
         
         stage('22053379 STG1') {
             steps {
-                sh "echo S1_22053379: Environment Preparation Completed"
+                echo "22053379 STG1: Push change to production web service?"
+                input('Proceed or Abort?')
             }
         }
         
         stage('22053379 STG2'){
             steps {
-            sh 'docker rm -f S2_22053379_Server'
-            sh 'docker run -d -it -p 42000:80 --name=S2_22053379_Server 22053379_webimage /bin/bash'
+           
             echo "S2_22053379: Web Server Creation Completed"
             
             }
@@ -58,7 +58,7 @@ pipeline {
        steps{
        script{
                 
-         input('Do you want to release the work?')
+         
      
         }
         }
@@ -91,13 +91,7 @@ pipeline {
       stage('Stage 6_22053379'){
       steps{
       script{
-        def proceed = true
-            if(proceed){
-                echo "Work Released - 22053379"
-            }else{
-                currentBuild.result = 'FAILURE'
-            }
-      
+        
       }
       }
       }

@@ -30,8 +30,7 @@ pipeline {
         
         stage('22053379 STG1') {
             steps {
-                echo "22053379 STG1: Push change to production web service?"
-                input('Proceed or Abort?')
+                input('22053379 STG1: Push change to production web service?')
             }
         }
         

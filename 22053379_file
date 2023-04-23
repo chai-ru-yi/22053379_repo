@@ -37,7 +37,7 @@ pipeline {
         stage('22053379 STG2'){
             steps {
            
-            echo "S2_22053379: Web Server Creation Completed"
+            echo "22053379 STG2 - Push to production web server completed"
             
             }
         }      

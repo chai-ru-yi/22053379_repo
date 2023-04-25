@@ -30,7 +30,7 @@ pipeline {
         
         stage('22053379 STG1') {
             steps {
-                echo "22053379 STG1: Push change to production web service?d"
+                echo "22053379 STG1: Push change to production web service?"
                 input('22053379 STG1: Push change to production web service?')
             }
         }
@@ -47,6 +47,7 @@ pipeline {
        stage('22053379 STG3'){
        steps{
        echo "22053379 SGT3: Proceed to test production web service?"
+       input('22053379 STG3: Proceed or abort?')
         }
         }
       
@@ -59,11 +60,9 @@ pipeline {
          stage('22053379 STG5'){
        steps{
        echo "22053379 SGT5: Web server testing result has been inspected"
-        input('Proceed or Abort?')
+        input('22053379 STG5: Proceed or Abort?')
         }
         }
-        
-        
         
         
          stage('22053379 STG6'){

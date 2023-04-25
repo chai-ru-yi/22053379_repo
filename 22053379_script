@@ -9,4 +9,4 @@ puppet resource file /tmp/22053379 ensure=directory
 puppet resource file /tmp/22053379/clone ensure=directory
 cd /tmp/22053379/clone
 git clone https://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@github.com/22053379_repo.git
-cp -p /tmp/22053379/clone/22053379_repo/22053379_index.html /var/www/html/22053379_index.html
+cp -p /tmp/22053379/clone/22053379_repo/22053379_index.html /var/www/html/index.html

@@ -12,8 +12,8 @@ pipeline {
       stage('22053379 STG2'){
             steps {
             sh '''#!/bin/bash
-            puppet resource file /tmp/clone ensure=absent force=true;
-            puppet resource file /tmp/clone ensure=directory;
+            puppet resource file /tmp/22053379/clone ensure=absent force=true;
+            puppet resource file /tmp/22053379/clone ensure=directory;
             cd /tmp/22053379/clone;
             git clone https://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@github.com/22053379_repo.git
             targets=22053379-websvr;

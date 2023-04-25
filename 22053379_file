@@ -11,54 +11,7 @@ pipeline {
                 input('22053379 STG1: Push change to production web service?')
             }
         }
-        
-        stage('22053379 STG2'){
-            steps {
-           sh '''#!/bin/bash
-           targets=22053379-websvr;
-           locate_script='/tmp/clone/22053379_repo/22053379_script';
-           bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
-           '''
-           
-            echo "22053379 STG2 - Push to production web server completed"
-            
-            }
-        }      
-     
-      
-       stage('22053379 STG3'){
-       steps{
-       echo "22053379 SGT3: Proceed to test production web service?"
-       input('22053379 STG3: Proceed or abort?')
-        }
-        }
-      
-        stage('22053379 STG4'){
-       steps{
-       echo "22053379 SGT4: Production web server testing completed"
-        }
-        }
-        
-         stage('22053379 STG5'){
-       steps{
-       echo "22053379 SGT5: Web server testing result has been inspected"
-        input('22053379 STG5: Proceed or Abort?')
-        }
-        }
-        
-        
-         stage('22053379 STG6'){
-       steps{
-       echo "22053379 STG6: Production Operation is successful"
-        }
-        }
-      
-      
-      stage('Stage 6_22053379'){
-      steps{
-      echo "S2_22053379: Web Server Creation Completed"
-      }
-      }
+       
       
       
    

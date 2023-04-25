@@ -7,4 +7,4 @@ puppet resource file /tmp/clone ensure=absent force=true
 puppet resource file /tmp/clone ensure=directory
 cd /tmp/clone
 git clone https://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@github.com/chai-ru-yi/22053379_repo.git
-cp -p /tmp/clone/22053379_repo/22053379_index.html /var/www/html/index
+cp -p /tmp/clone/22053379_repo/22053379_index.html /var/www/html

@@ -10,11 +10,7 @@ pipeline {
      
       stage('22053379 STG2'){
             steps {
-           sh '''#!/bin/bash
-           targets=22053379-websvr;
-           locate_script='/tmp/clone/22053379_repo/22053379_script';
-           bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
-           '''
+         
            
             echo "22053379 STG2 - Push to production web server completed"
             

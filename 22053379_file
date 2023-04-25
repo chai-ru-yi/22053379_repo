@@ -1,11 +1,12 @@
 pipeline {
       agent any
       stages {
-          stage('One') {
-          steps {
-            echo 'Begin of Pipeline: Stage one completes'
-          }
-          }
+       stage('22053379 STG1') {
+            steps {
+                echo "22053379 STG1: Push change to production web service?"
+                input('22053379 STG1: Push change to production web service?')
+            }
+        }
      
      
       stage('22053379 STG2'){
